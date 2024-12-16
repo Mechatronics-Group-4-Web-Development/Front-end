@@ -1,0 +1,145 @@
+/* Define color variables */
+:root {
+    --primary-bg-color: #333;      /* Background color for navbar and content box */
+    --primary-text-color: white;    /* Text color for navbar and links */
+    --hover-bg-color: #444;        /* Background color for links when hovered */
+    --hover-text-color: #f39c12;    /* Text color for links when hovered */
+    --underline-color: #f39c12;    /* Color for the underline animation on navbar links */
+    --border-color: #666;          /* Border color for list items in content box */
+}
+
+/* Basic styles for the navbar */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-bg-color);
+    color: var(--primary-text-color);
+    padding: 0 20px;
+    height: 120px;
+    position: relative;
+}
+
+/* Navbar left (logo and university name) */
+.navbar-left {
+    display: flex;
+    align-items: center;
+    width: 30%;
+}
+
+.logo {
+    height: 50px;  /* Adjusted logo height */
+    margin-right: 10px;
+}
+
+.university-name {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+/* Navbar right (menu items) */
+.navbar-right {
+    width: 70%;
+}
+
+.navbar-right ul {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    height: 100%;
+    align-items: center;
+}
+
+.navbar-right li {
+    position: relative;
+    margin-left: 20px;
+}
+
+/* Styling for navbar links */
+.navbar-right a {
+    color: var(--primary-text-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 5px 0;
+    position: relative;
+    display: inline-block;
+}
+
+/* Underline animation on hover */
+.navbar-right a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--underline-color);
+    bottom: 0;
+    left: 50%;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.navbar-right a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Content box styling */
+.content-box {
+    display: none;
+    position: absolute;
+    top: 100%;  /* Adjusted to position the content box directly below the navbar */
+    left: 50%;  /* Centralized horizontally */
+    transform: translateX(-50%);  /* Adjusted to centralize it */
+    width: 250px;
+    background-color: var(--hover-bg-color);
+    padding: 10px;
+    color: var(--primary-text-color);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    max-height: 200px;
+    overflow-y: auto;
+    border-radius: 8px;  /* Optional: add rounded corners for the content box */
+}
+
+/* Show content box when hovering over the menu item */
+.navbar-right li:hover .content-box {
+    display: block;
+}
+
+/* Styling for the list in content boxes - vertical alignment */
+.content-box ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: block;
+}
+
+.content-box li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Styling for links in content box */
+.content-box li a {
+    color: var(--primary-text-color);
+    text-decoration: none;
+    display: block;
+    padding: 5px 0;
+}
+
+/* Hover effect for links in the content box */
+.content-box li a:hover {
+    color: var(--hover-text-color);  /* Change text color on hover */
+    background-color: var(--primary-bg-color);  /* Optional: background color on hover */
+}
+
+/* Optional: Add a background color for the navbar when hovering over */
+.navbar-right li:hover {
+    background-color: var(--hover-bg-color);
+}
