@@ -59,7 +59,7 @@ body {
 
 .navbar-right li {
     position: relative;
-    margin-left: 20px;
+    margin-left: 35px;
 }
 
 /* Styling for navbar links */
@@ -121,7 +121,9 @@ body {
 }
 
 .content-box li {
-    padding: 10px 0;
+    margin: auto;
+    padding: 10px;
+    text-align: left;
     border-bottom: 1px solid var(--border-color);
 }
 
