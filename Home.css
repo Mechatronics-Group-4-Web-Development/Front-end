@@ -235,7 +235,7 @@ body {
 /* Welcome Message (Overlapping the Carousel) */
 .welcome-message {
     position: absolute; /* Overlaps the carousel */
-    top: 30%; /* Adjust for vertical positioning */
+    top: 15%; /* Adjust for vertical positioning */
     left: 10%; /* Horizontal positioning */
     z-index: 3; /* Above carousel and its elements */
     background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background for readability */
@@ -252,6 +252,6 @@ body {
 }
 
 .welcome-message p {
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     line-height: 1.5;
 }
