@@ -18,6 +18,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
+    overflow-x: hidden;
 }
 
 .navbar {
@@ -28,7 +29,8 @@ body {
     color: var(--primary-text-color);
     padding: 0 20px;
     height: 120px;
-    position: relative;
+    position: fixed;
+    z-index: 20;
 }
 
 /* Navbar left (logo and university name) */
@@ -108,7 +110,7 @@ body {
     color: var(--primary-text-color);
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 100;
-    max-height: 200px;
+    max-height: inherit;
     overflow-y: auto;
     border-radius: 8px;  /* Optional: add rounded corners for the content box */
 }
@@ -151,8 +153,13 @@ body {
 .navbar-right li:hover {
     background-color: var(--hover-bg-color);
 }
+.main-content{
+    background-color: rgb(221, 219, 219);
+    position: absolute;
+    top: 20%;
+}
 
-.main-content {
+.section1 {
     width: 100vw;
     height: 100vh;
     position: relative; /* Necessary for welcome-message positioning */
@@ -233,7 +240,7 @@ body {
 }
 
 /* Welcome Message (Overlapping the Carousel) */
-.welcome-message {
+.introduction-message {
     position: absolute; /* Overlaps the carousel */
     top: 15%; /* Adjust for vertical positioning */
     left: 10%; /* Horizontal positioning */
@@ -246,12 +253,73 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Optional: Add subtle shadow */
 }
 
-.welcome-message h1 {
+.introduction-message h1 {
     font-size: 2.5rem;
     margin-bottom: 20px;
 }
 
-.welcome-message p {
+.introduction-message p {
     font-size: 1.0rem;
     line-height: 1.5;
 }
+.welcome-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #f4f4f4;
+  }
+
+  /* Main content container with 80% width */
+  .welcome-container {
+    width: 80%;
+    height: 90vh;
+    display: flex;
+    margin: auto;
+    padding-top: 20px;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background for readability */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    color: white;
+  }
+
+  /* Style for the image container, 30% width */
+  .dean-pic {
+    width: 30%;
+    margin-right: 30px;
+    margin-top: 20px;
+  }
+
+  .dean-pic img {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  /* Style for the text section, 70% width */
+  .welcome-message {
+    margin-top: 50px;
+    margin-left: 30px;
+    width: 50%;
+    color: white;
+  }
+  .welcome-message h2:first-of-type {
+    font-weight: normal;
+    font-size: 1.6rem;
+  }
+  .welcome-message h2 {
+    margin-bottom: 10px;
+    font-size: 1.6rem;
+  }
+  .welcome-message .quote{
+    font-size:4rem;
+  }
+.welcome-message p:first-of-type{
+    margin-top: -35px;
+    font-size: 1.2rem;
+    color: white;
+}
+  .welcome-message p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--hover-text-color);
+  }
