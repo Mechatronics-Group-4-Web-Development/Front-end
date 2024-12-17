@@ -37,3 +37,10 @@ dots.forEach(dot => {
 
 // Automatic carousel slide (optional)
 setInterval(nextImage, 5000); // Change every 5 seconds
+const hamburgerMenu = document.getElementById('hamburger-menu');
+const navbarRight = document.getElementById('navbar-right');
+
+hamburgerMenu.addEventListener('click', () => {
+  hamburgerMenu.classList.toggle('active'); 
+  navbarRight.classList.toggle('active'); 
+});
