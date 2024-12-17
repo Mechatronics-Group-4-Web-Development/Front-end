@@ -31,6 +31,7 @@ body {
     height: 120px;
     position: fixed;
     z-index: 5;
+    width: 100%;
 }
 
 /* Navbar left (logo and university name) */
@@ -46,7 +47,7 @@ body {
 }
 
 .university-name {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: bold;
 }
 
@@ -403,7 +404,9 @@ body {
     text-decoration: underline;
     color: var(--underline-color);
 }
-
+.section4{
+    margin-bottom: 50px;
+}
 .section-title {
     text-align: center;
     font-size: 2.6rem;
@@ -483,7 +486,155 @@ body {
     color: var(--underline-color);
 }
 
+footer {
+    background-color: #444;
+    color: #fff;
+    padding: 40px 20px;
+    display: block;
+}
 
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    display: block;
+    padding: 20px;
+    margin: auto;
+}
+
+.footer-section h2 {
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+.contact-info i {
+    color: var(--underline-color);
+    margin-right: 10px;
+}
+.social-icons{
+    margin-top: 40px;
+}
+.social-icons a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    color: var(--underline-color);
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    margin-right: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.faq-container {
+    background-color: #444;
+    padding: 20px;
+    border-radius: 8px;
+    color: #fff;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.faq-item {
+    border-top: 1px solid #666;
+    padding: 20px 0;
+}
+
+.faq-item:last-child {
+    border-bottom: 1px solid #666;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 15px 20px;
+    border-radius: 6px;
+    background-color: #555;
+    transition: background 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: #666;
+}
+
+.faq-question p {
+    font-size: 1.2rem;
+    margin: 0;
+    flex: 1;
+}
+
+.faq-question i {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+    margin-left: 50px;
+}
+
+.faq-answer {
+    display: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #ccc;
+    background-color: #333;
+    border-radius: 6px;
+    transition: max-height 0.3s ease-in-out;
+    max-height: 0; /* Initially hidden */
+    max-width: 470px;
+    overflow: hidden;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+    max-height: 500px; /* Makes the answer visible */
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(180deg); /* Rotate arrow when active */
+}
+
+.extra-info {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #bbb;
+    background-color: #444;
+    padding: 10px;
+    border-radius: 6px;
+    display: none; /* Initially hidden */
+}
+
+.faq-item.active .extra-info {
+    display: block; /* Display extra info when active */
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.85rem;
+    color: #ccc;
+}
+
+.footer-bottom p {
+    margin-top: 10px;
+}
 
 
 
@@ -503,6 +654,7 @@ body {
     /* Hamburger Menu Styles */
     .hamburger-menu {
         display: block; 
+        z-index: 30;
     }
 
     /* Align Navbar to the Right with 40% width */
@@ -514,7 +666,6 @@ body {
         height: 80vh; /* Full screen height */
         background-color: rgba(0, 0, 0, 0.8); /* Transparent black background */
         z-index: 20;
-        overflow: hidden; 
         transition: right 0.4s ease-in-out; /* Smooth transition from right */
     }
 
@@ -528,22 +679,22 @@ body {
         flex-direction: column;
         align-items: flex-start;
         padding: 20px;
-        margin: 0;
+        margin-top: -150px;
     }
 
     .navbar-right li {
         margin: 15px 0; 
-        position: relative; /* To position the content box */
     }
 
     /* Submenu (Content Box) Styles */
     .navbar-right li:hover .content-box {
         display: block;
         position: absolute;
-        left: 400px; /* Start it outside the dashboard */
+        left: -2px; /* Start it outside the dashboard */
         top: 0;
         width: 250px; /* Set width to your desired value */
-        height: 40vh; /* Adjust height as needed */
+        min-height: 250px;
+        height: inherit;/* Adjust height as needed */
         background-color: var(--primary-bg-color);
         transition: all 0.3s ease;
         transform: translateX(-100%); /* Use transform to slide it out of the dashboard */
@@ -555,7 +706,7 @@ body {
         color: var(--primary-text-color);
         text-decoration: none;
         font-size: 1.2rem;
-        padding: 10px 0;
+        padding: 5 0;
         display: block;
         width: 100%;
     }
@@ -564,7 +715,11 @@ body {
     .content-box {
         display: none;
     }
-
+    .content-box li {
+        margin: 0;
+        top: 120px;
+        text-align: left;
+    }
     .hamburger-menu.active {
         color: var(--hover-text-color); 
     }
@@ -663,3 +818,19 @@ body {
         margin-left: 80px;
     }
 }
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+    }
+
+    .footer-section {
+        flex: 1 1 100%;
+        text-align: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}
+
