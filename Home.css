@@ -341,7 +341,7 @@ body {
     align-items: center;
 }
 
-.news-title {
+.news-title{
     font-size: 2.6rem;
     font-weight: bold;
     margin: auto;
@@ -403,6 +403,93 @@ body {
     text-decoration: underline;
     color: var(--underline-color);
 }
+
+.section-title {
+    text-align: center;
+    font-size: 2.6rem;
+    margin-bottom: 30px;
+    color: var(--underline-color);
+}
+
+.timeline {
+    position: relative;
+    padding: 20px 0;
+    margin: auto;
+    width: 80%;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: #007bff;
+    top: 0;
+    bottom: 0;
+    left: 40px;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    margin-top: -10px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.timeline-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 4px solid var(--underline-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    font-size: 2rem;
+    color: var(--underline-color);
+}
+
+.timeline-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    margin-left: 100px;
+    width: 100%;
+}
+
+.timeline-content h2 {
+    font-size: 1.5rem;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.read-more {
+    color: #007bff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+    color: var(--underline-color);
+}
+
+
+
+
+
+
+
+
 
 @media (min-width: 500px) and (max-width: 1050px) {
     .navbar {
@@ -543,3 +630,36 @@ body {
     }
   }
   
+  @media (max-width: 1024px) {
+    .update-box {
+        flex: 1 1 calc(45% - 20px); /* Each box takes 45% of container on smaller screens */
+        max-width: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .update-box {
+        flex: 1 1 calc(100% - 20px); /* Each box takes 100% on small screens */
+        max-width: 100%;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .timeline {
+        margin: auto;
+    }
+
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-icon {
+        left: -20px;
+        font-size: 1.5rem;
+    }
+
+    .timeline-content {
+        margin-left: 80px;
+    }
+}
