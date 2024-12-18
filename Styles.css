@@ -588,7 +588,7 @@ footer {
     transition: transform 0.3s ease;
     margin-left: 50px;
 }
-
+  
 .faq-answer {
     display: none;
     padding: 10px 20px;
@@ -604,14 +604,14 @@ footer {
 
 .faq-item.active .faq-answer {
     display: block;
-    max-height: 500px; /* Makes the answer visible */
+    max-height: 1000px; /* Makes the answer visible */
 }
 
 .faq-item.active .faq-question i {
     transform: rotate(180deg); /* Rotate arrow when active */
 }
-
-.extra-info {
+  /* Extra Info Style */
+  .extra-info {
     margin-top: 10px;
     font-size: 1rem;
     color: #bbb;
@@ -619,12 +619,23 @@ footer {
     padding: 10px;
     border-radius: 6px;
     display: none; /* Initially hidden */
-}
-
-.faq-item.active .extra-info {
-    display: block; /* Display extra info when active */
-}
-
+    max-height: 0; /* Initially hidden, with smooth transition */
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out; /* Add padding transition */
+  }
+  
+  /* Show extra info when FAQ item is active */
+  .faq-item.active .extra-info {
+    display: block;
+    max-height: 500px; /* You can adjust this value based on your content size */
+    padding: 10px; /* Ensure padding applies when displayed */
+  }
+  
+  /* Arrow Rotation */
+  .fas.fa-chevron-down.rotate {
+    transform: rotate(180deg); /* Rotate the arrow */
+  }
+  
 .footer-bottom {
     text-align: center;
     margin-top: 20px;
